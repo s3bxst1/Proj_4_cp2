@@ -5,11 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
-// ShortLister program
 public class ShortLister {
     public static void main(String[] args) {
         JFileChooser fileChooser = new JFileChooser();
@@ -19,7 +14,7 @@ public class ShortLister {
             java.io.File selectedFile = fileChooser.getSelectedFile();
             List<String> shortWords = collectShortWords(selectedFile);
 
-            // Printing short words from the file
+            //sout
             System.out.println("Short words from the file:");
             for (String word : shortWords) {
                 System.out.println(word);
@@ -27,7 +22,7 @@ public class ShortLister {
         }
     }
 
-    // Method to collect short words from the file
+    // Method to collect 5 letters and under words from the file
     public static List<String> collectShortWords(java.io.File file) {
         List<String> shortWords = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -46,7 +41,7 @@ public class ShortLister {
         return shortWords;
     }
 }
-// ShortWordFilter class implementing Filter interface
+// implenting filter
 class ShortWordFilter implements Filter<String> {
     @Override
     public boolean accept(String word) {
